@@ -1,0 +1,29 @@
+
+<h3 *ngIf="cart?.cartItem?.length <= 0" class="text-center text-primary my-5">There is no products in your cart</h3>
+
+<div class="row" *ngIf="cart?.cartItem?.length > 0">
+    <div class="col-sm-8">
+        <div class="card-item border d-flex my-3" *ngFor="let item of cart.cartItem; let i = index">
+            <div class="P-img">
+                <img src="{{ item.product.imageUrl }}" alt="{{ item.product.name }}">
+            </div>
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title d-flex align-items-end">{{ item.product.name }} <span class="price ml-auto">{{ item.product.price }} EGP</span></h5>
+                <div class="edit">
+                    <button class="btn btn-sm btn-primary" (click)="increase(i)">+</button>
+                    <span class="mx-3">{{ item.quantity }}</span>
+                    <button class="btn btn-sm btn-primary" (click)="decrease(i)">-</button>
+                </div>
+                <button class="btn btn-danger ml-auto" (click)="remove(i)">Remove</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 my-3">
+        <h4 class="total">Total: {{ cart.total }}</h4>
+        <button class="btn btn-primary btn-block" (click)="checkout()">Checkout</button>
+    </div>
+</div>
+
+<div class="msg">
+    <div class="alert alert-{{ alert.status }}" role="alert" *ngIf="alert">{{ alert.msg }}</div>
+</div>

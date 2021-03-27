@@ -1,0 +1,43 @@
+<h5 class="mt-5">Add new item</h5>
+<form class="row" (ngSubmit)="add(f)" #f="ngForm">
+    <div class="col-md-6 mb-3">
+        <label for="name" class="form-label"> Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="name" ngModel required>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" class="form-control" id="price" name="price" placeholder="price" ngModel required>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="imageUrl" class="form-label">Image Url</label>
+        <input type="text" class="form-control" id="imageUrl" name="imageUrl" placeholder="Image Url" ngModel required>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="quantity" class="form-label">Quantity</label>
+        <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Quantity" ngModel required>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary" [disabled]="!f.valid">
+            Add
+        </button>
+    </div>
+</form>
+
+<hr>
+
+<h5>All item</h5>
+<div class="row">
+    <div class="col-md-3 col-sm-6 col-12 py-3" *ngFor="let product of products; let i = index">
+        <div class="card">
+            <img src="{{ product.imageUrl }}" class="card-img-top" alt="{{ product.name }}">
+            <div class="card-body">
+                <h5 class="card-title d-flex align-items-end">{{ product.name }} <span class="price ml-auto">{{
+                        product.price }} EGP</span></h5>
+              <button class="btn btn-danger" (click)="delete(i)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="msg">
+    <div class="alert alert-{{ alert.status }}" role="alert" *ngIf="alert">{{ alert.msg }}</div>
+</div>

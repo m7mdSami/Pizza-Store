@@ -1,0 +1,30 @@
+[
+  {
+      "id": 1,
+      "name": "pizza 1",
+      "price": "170.00",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKiunWPucXlFmos9JY6pbPm6K4thRUScEjg-S8QLJqc_xD_OOghK2fTkP0F2X2ev2b_gY&usqp=CAU",
+      "quantity": 6
+  },
+  {
+      "id": 2,
+      "name": "pizza 2",
+      "price": "302.00",
+      "imageUrl": "http://bayti-dz.com/wp-content/uploads/2020/07/pizza-au-jambon-mozzarella-tomates-cerise-olives-et-basilic.jpeg",
+      "quantity": 2
+  },
+  {
+      "id": 3,
+      "name": "pizza 3",
+      "price": "279.00",
+      "imageUrl": "https://www.adeline-cuisine.fr/wp-content/uploads/2017/07/pizza-jambon-cru-tomate-mozzarella-recette-facile.jpg",
+      "quantity": 4
+  },
+  {
+      "id": 4,
+      "name": "pizza 4",
+      "price": "302.00",
+      "imageUrl": "http://bayti-dz.com/wp-content/uploads/2020/07/pizza-au-jambon-mozzarella-tomates-cerise-olives-et-basilic.jpeg",
+      "quantity": 3
+  }
+]

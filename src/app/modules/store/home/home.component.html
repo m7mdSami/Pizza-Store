@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-md-3 col-sm-6 col-12 py-3" *ngFor="let product of products; let i = index">
+        <div class="card">
+            <img src="{{ product.imageUrl }}" class="card-img-top" alt="{{ product.name }}">
+            <div class="card-body">
+              <h5 class="card-title d-flex align-items-end">{{ product.name }} <span class="price ml-auto">{{ product.price }} EGP</span></h5>
+              <button class="btn btn-primary" (click)="addToCart(i)">Add to cart</button>
+            </div>
+          </div>
+    </div>
+</div>
+<div class="msg">
+    <div class="alert alert-{{ alert.status }}" role="alert" *ngIf="alert">{{ alert.msg }}</div>
+</div>
